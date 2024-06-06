@@ -43,7 +43,7 @@ namespace OOPLibrary
             }
             else if (bookType == "Non-Fiction")
             {
-                book = new NonFiction(title, author, isbn, year, specific);
+                book = new Nonfiction(title, author, isbn, year, specific);
             }
             else if (bookType == "Comic")
             {
@@ -62,7 +62,7 @@ namespace OOPLibrary
             lbBookList.Items.Clear();
             foreach (var book in library.BookList)
             {
-                lbBookList.Items.Add(book.ToString());
+                lbBookList.Items.Add(library.ShowBookList(book.Title, book.Author));
             }
         }
 
